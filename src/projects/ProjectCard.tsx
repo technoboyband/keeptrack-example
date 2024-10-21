@@ -2,6 +2,7 @@ import { Project } from "./Project";
 
 interface ProjectCardProps {
     project: Project;
+    onEdit: (project: Project) => void;
 }
 
 function formatDescription(description: String){
@@ -10,7 +11,7 @@ function formatDescription(description: String){
 
 function ProjectCard(props: ProjectCardProps){
     const handleClick = (editedProject:Project) => {
-        console.log(editedProject)
+        props.onEdit(editedProject);
     };
     return (
         <div className = "card">
